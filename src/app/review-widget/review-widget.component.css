@@ -1,0 +1,49 @@
+#review-widget {
+  padding: 1em;
+}
+
+#review-stars {
+  font-size: 32px;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+}
+
+.review-star:hover::before, .review-star:hover ~ .review-star::before {
+  content: "\2605";
+  position: absolute;
+  cursor: pointer;
+}
+
+.selected::before, .selected ~ .review-star::before {
+  content: "\2605";
+  position: absolute;
+  cursor: pointer;
+}
+
+#review-text {
+  margin-top: 2em;
+}
+
+#review-text > textarea {
+  height: 200px;
+  width: 400px;
+  border-radius: .5em;
+}
+
+#review-submit {
+  margin-top: 1em;
+  font-size: 1.5em;
+  background-color: #417ba2;
+  display: inline-block;
+  padding: .5em;
+  border-radius: .2em;
+}
+
+#review-submit:hover {
+  cursor: pointer;
+}
+
+.review-existing-review {
+  margin-top: 2em;
+}

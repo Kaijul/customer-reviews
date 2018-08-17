@@ -1,0 +1,33 @@
+<div id="review-widget">
+  <h1>Write a Review!</h1>
+
+  <div id="review-stars">
+    <span id="review-one-star" [ngClass]="{'selected': review.Stars == 5}" class="review-star" (click)="setReview(5)">&#9734;</span>
+    <span id="review-two-star" [ngClass]="{'selected': review.Stars == 4}" class="review-star" (click)="setReview(4)">&#9734;</span>
+    <span id="review-three-star" [ngClass]="{'selected': review.Stars == 3}" class="review-star" (click)="setReview(3)">&#9734;</span>
+    <span id="review-four-star" [ngClass]="{'selected': review.Stars == 2}" class="review-star" (click)="setReview(2)">&#9734;</span>
+    <span id="review-five-star" [ngClass]="{'selected': review.Stars == 1}" class="review-star" (click)="setReview(1)">&#9734;</span>
+  </div>
+
+  <div id="review-text">
+    <textarea [(ngModel)]="review.Text"></textarea>
+  </div>
+
+  <div id="review-submit">
+    <span (click)="submitReview()">Submit</span>
+  </div>
+
+  <div id="review-existing-reviews">
+    <div class="review-existing-review" *ngFor="let review of existingReviews">
+      <span>{{review.User.Name}}</span>
+      <div class="existing-review-stars">
+        <span *ngFor="let item of createStarArray(review.Stars)" class="existing-review-star">&#9733;</span>
+        <span *ngFor="let item of createStarArray(5 - review.Stars)" class="existing-review-star">&#9734;</span>
+      </div>
+      <span>{{review.Date.toLocaleDateString()}}</span>
+      <div class="review-existing-text">
+        <span>{{review.Text}}</span>
+      </div>
+    </div>
+  </div>
+</div>

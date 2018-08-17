@@ -1,0 +1,11 @@
+h1 {
+  text-align: center;
+}
+
+review-widget {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(#417ba2, white);
+  height: 100%;
+}
